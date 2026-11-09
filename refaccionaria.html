@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>CADENA'S Refaccionaria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/owl.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <style>
+      /* Animación de fade y slide */
+      .refaccion.fade-in {
+        animation: fadeSlideIn 0.4s ease-in-out;
+      }
+      @keyframes fadeSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Animación de "pulse" al seleccionar */
+      .pulse {
+        animation: pulseAnim 0.3s ease-in-out;
+      }
+      @keyframes pulseAnim {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(33, 39, 65, 0);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 0 10px rgba(33, 39, 65, 0.15);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(33, 39, 65, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <div class="branding">
+                <a href="index.html" class="logo-link">
+                  <img src="images/logo.png" alt="Logo" class="logo-img">
+                </a>
+                <p class="branding-text">Tracto Servicios Cadena´s</p>
+              </div>
+              <ul class="nav">
+                <li class="scroll-to-section"><a href="index.html#top" class="active">Inicio</a></li>
+                <li class="scroll-to-section"><a href="index.html#services">Servicios</a></li>
+                <li class="scroll-to-section"><a href="index.html#about">Nosotros</a></li>
+                <li><a href="contactanos.html">Contactanos</a></li> 
+              </ul>  
+              <a class="menu-trigger">
+                  <span>Menu</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <div class="page-heading" style="background-image: url('images/servicio_03.jpg'); background-position: center;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-text">
+              <h2>Refaccionaria</h2>
+              <div class="div-dec"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="py-5" id="refaccionaria">
+      <div class="container">
+        <h2 class="text-center mb-4 fw-bold" style="color: #212741;">Catálogo de Refacciones</h2>
+        <!-- Horario destacado -->
+        <div class="alert alert-success text-center fw-semibold" style="background: linear-gradient(135deg, #f6c075, #fc7548); color: #212741; border-radius: 10px;">
+          ¡Cerramos hasta las <strong>9:00 PM</strong> para tu comodidad!
+        </div>
+        <!-- Buscador -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-6">
+            <input type="text" id="busqueda" class="form-control" placeholder="Buscar refacción...">
+          </div>
+        </div>
+
+        <!-- Lista de refacciones -->
+        <div class="row" id="lista-refacciones">
+          <!-- Las tarjetas se insertan dinámicamente con JS -->
+        </div>
+
+        <!-- Navegación -->
+        <div class="text-center mt-3">
+          <button id="prev-btn" class="btn btn-secondary btn-sm me-2">Anterior</button>
+          <button id="next-btn" class="btn btn-secondary btn-sm">Siguiente</button>
+        </div>
+
+        <!-- Botón de WhatsApp -->
+        <div class="text-center mt-4">
+          <a href="#" id="btn-whatsapp" class="btn btn-success" target="_blank">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <p class="mb-1">&copy; 2025 CADENA'S Tracto Servicios. Todos los derechos reservados.</p>
+        <p class="mb-1">Teléfono: <a  class="text-white text-decoration-underline">314 138 22 85</a></p>
+        <p class="mb-0">Correo: <a href="mailto:ventasts@gpcadenas.com" class="text-white text-decoration-underline">ventasts@gpcadenas.com</a></p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Solo Isotope empaquetado -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/swiper@4.0.7/dist/js/swiper.min.js"></script>
+    <script>
+      const refacciones = [
+        { nombre: "Bolsas de aire", desc: "Componentes clave para la suspensión neumática de tractocamiones." },
+        { nombre: "Filtros de diesel", desc: "Filtran impurezas del combustible para proteger el sistema de inyección." },
+        { nombre: "Filtros de aire", desc: "Evitan la entrada de polvo y contaminantes al motor." },
+        { nombre: "Filtros de aceite", desc: "Mantienen el aceite libre de partículas, prolongando la vida del motor." },
+        { nombre: "Filtros cartucho", desc: "Diseño interno de alta eficiencia para sistemas de filtrado específicos." },
+        { nombre: "Llave extractora para filtros", desc: "Herramienta para desmontar filtros de manera segura." },
+        { nombre: "Retenes", desc: "Sellan ejes rotativos para evitar fugas de aceite o grasa." },
+        { nombre: "Baleros", desc: "Rodamientos que reducen la fricción en partes móviles." },
+        { nombre: "Anticongelante garrafas", desc: "Protege el sistema de enfriamiento contra el sobrecalentamiento y congelamiento." },
+        { nombre: "Aceite para motor", desc: "Lubrica y protege componentes internos del motor." },
+        { nombre: "Aceite para diferencial", desc: "Diseñado para soportar altas presiones en sistemas de transmisión." },
+        { nombre: "Aceite para dirección hidráulica", desc: "Garantiza un funcionamiento suave y eficiente del sistema de dirección." },
+        { nombre: "Mangueras para turbo", desc: "Resistentes al calor y presión, conectan el turbo con el motor." },
+        { nombre: "Abrazaderas para turbo", desc: "Sujetadores resistentes que aseguran las mangueras del turbo." },
+        { nombre: "Abrazaderas para escape", desc: "Fijan componentes del sistema de escape con alta tolerancia térmica." },
+        { nombre: "Abrazaderas sin fin", desc: "Versátiles para sujeción de mangueras en distintas aplicaciones." },
+        { nombre: "Abrazaderas Dixon reforzadas", desc: "Abrazaderas industriales de alta presión y resistencia." },
+        { nombre: "Desarmadores", desc: "Herramientas manuales para tornillos de distintos tipos." },
+        { nombre: "Llaves combinadas", desc: "Herramientas dobles (abierta y estrella) para mecánica general." },
+        { nombre: "Matracas", desc: "Herramientas para apriete rápido con dados intercambiables." },
+        { nombre: "Mangueras armadas", desc: "Mangueras listas para instalación con terminales." },
+        { nombre: "Manguera plástica varias medidas", desc: "Tubos plásticos para usos múltiples en tractocamión." },
+        { nombre: "Urea", desc: "Agente para reducción de emisiones en motores diésel (DEF)." },
+        { nombre: "Válvulas niveladoras", desc: "Regulan la altura de la suspensión neumática." },
+        { nombre: "Válvulas de descarga rápida", desc: "Mejoran tiempos de respuesta del sistema de frenos neumáticos." },
+        { nombre: "Varillas niveladoras", desc: "Conectan válvulas con suspensión para mantener la altura." },
+        { nombre: "Manguera de servicio espiral azul y roja", desc: "Mangueras flexibles para conexiones entre tracto y remolque." },
+        { nombre: "Cable macho", desc: "Conectores eléctricos usados para interconexiones de remolque." },
+        { nombre: "Focos (H11, H7, H4, etc)", desc: "Lámparas estándar para faros de vehículos pesados." },
+        { nombre: "Plafones de LED e incandescentes", desc: "Iluminación para caja o cabina, varios modelos." },
+        { nombre: "Lonas de doble semi remolque y exceso de dimensiones", desc: "Lonas de advertencia para seguridad en carga especial." },
+        { nombre: "Lámparas", desc: "Amplia variedad para iluminación del vehículo o caja." },
+        { nombre: "Fusibles", desc: "Protegen circuitos eléctricos de sobrecargas." },
+        { nombre: "Terminales", desc: "Conectores eléctricos para cables de batería o instalación." },
+        { nombre: "Relevadores", desc: "Interruptores eléctricos de alta corriente para control de sistemas." },
+        { nombre: "Puerquitos", desc: "Acoples neumáticos entre tracto y remolque (nombre popular)." },
+        { nombre: "Arrancador", desc: "Motor auxiliar para iniciar la marcha del motor principal." },
+        { nombre: "Aflojatodo", desc: "Lubricante penetrante para liberar piezas oxidadas o atascadas." },
+        { nombre: "Limpia contactos", desc: "Limpia residuos en circuitos eléctricos sin dejar residuos." },
+        { nombre: "Aromatizantes varios", desc: "Variedad de fragancias para la cabina del tracto." },
+        { nombre: "Sargentos", desc: "Prensas para fijar piezas durante reparaciones o ensamblado." },
+        { nombre: "Medidores de presión", desc: "Instrumentos para medir presión de aire o fluidos." },
+        { nombre: "Tambores", desc: "Componentes del sistema de frenos traseros." },
+        { nombre: "Rines nuevos y usados", desc: "Rines metálicos para camiones, varios tamaños disponibles." },
+        { nombre: "Cintas negras", desc: "Cinta adhesiva multiusos de alta resistencia." },
+        { nombre: "Cinta gris", desc: "Cinta ducto para reparaciones rápidas y provisionales." },
+        { nombre: "Cinta doble cara", desc: "Adhesiva en ambos lados para fijación sin tornillos." },
+        { nombre: "Gas para clima (1kg y 360g)", desc: "Refrigerante para aire acondicionado automotriz." },
+        { nombre: "Ventiladores", desc: "Ventiladores para enfriamiento de motor o cabina." },
+        { nombre: "Tapones para radiador", desc: "Sellan el radiador y controlan presión interna." },
+        { nombre: "Tapones para tanque de diésel", desc: "Evitan fugas y contaminaciones en el tanque." },
+        { nombre: "Tapones para tanque recuperador", desc: "Tapa para sistema auxiliar de refrigeración." },
+        { nombre: "Bandas de amarre", desc: "Correas de tensión para asegurar la carga." },
+        { nombre: "Cadenas armadas grado 70 de amarre", desc: "Cadenas resistentes para asegurar cargas pesadas." },
+        { nombre: "Conos naranjas de seguridad", desc: "Para señalización vial o de zonas de trabajo." },
+        { nombre: "Tapas de maza", desc: "Cubiertas para proteger la maza de rueda." },
+        { nombre: "Aditivo para diésel", desc: "Mejora el rendimiento del combustible y limpieza del sistema." },
+        { nombre: "Aditivo para aceite", desc: "Extiende la vida útil del aceite y reduce la fricción." },
+        { nombre: "Unidores rápidos de plástico y bronce", desc: "Conectores rápidos para mangueras o líneas neumáticas." },
+        { nombre: "Conexiones varias", desc: "Piezas para unir diferentes tipos de mangueras o tuberías." },
+        { nombre: "Estopa", desc: "Fibra usada para limpieza mecánica o absorción de aceites." },
+        { nombre: "Piedra para pulir", desc: "Accesorio abrasivo para dar acabado a superficies." },
+        { nombre: "Rotochambers", desc: "Cámaras de freno neumático para camiones pesados." }
+      ];
+      let seleccionados = [];
+      let paginaActual = 0;
+      const porPagina = 6;
+      let filtradas = [...refacciones];
+
+      const listaRefacciones = document.getElementById("lista-refacciones");
+      const busquedaInput = document.getElementById("busqueda");
+
+      function renderizar() {
+        listaRefacciones.innerHTML = "";
+
+        const inicio = paginaActual * porPagina;
+        const fin = inicio + porPagina;
+        const refPage = filtradas.slice(inicio, fin);
+
+        refPage.forEach(ref => {
+          const col = document.createElement("div");
+          col.className = "col-md-4 mb-4 refaccion fade-in";
+          col.innerHTML = `
+            <div class="p-3 border rounded shadow-sm h-100">
+              <h5 class="fw-bold" style="color:#212741;">${ref.nombre}</h5>
+              <p class="mb-2">${ref.desc}</p>
+              <button class="btn ${seleccionados.includes(ref.nombre) ? 'btn-primary' : 'btn-outline-primary'} btn-sm seleccionar-btn" data-producto="${ref.nombre}">
+                ${seleccionados.includes(ref.nombre) ? 'Seleccionado' : 'Seleccionar'}
+              </button>
+            </div>
+          `;
+          listaRefacciones.appendChild(col);
+        });
+
+        actualizarEventos();
+        actualizarBotones();
+        actualizarEnlaceWhatsApp();
+      }
+
+      function actualizarEventos() {
+        document.querySelectorAll(".seleccionar-btn").forEach(btn => {
+          btn.addEventListener("click", function () {
+            const producto = this.dataset.producto;
+            const index = seleccionados.indexOf(producto);
+            const card = this.closest('.refaccion > div');
+            if (index === -1) {
+              seleccionados.push(producto);
+              this.classList.remove('btn-outline-primary');
+              this.classList.add('btn-primary');
+              this.innerText = 'Seleccionado';
+            } else {
+              seleccionados.splice(index, 1);
+              this.classList.remove('btn-primary');
+              this.classList.add('btn-outline-primary');
+              this.innerText = 'Seleccionar';
+            }
+            card.classList.add('pulse');
+            setTimeout(() => card.classList.remove('pulse'), 300);
+            actualizarEnlaceWhatsApp();
+          });
+        });
+      }
+
+      function actualizarEnlaceWhatsApp() {
+        const baseURL = "https://wa.me/5213141382285?text=";
+        let mensaje = "Hola, me interesa consultar precio y disponibilidad de las siguientes refacciones:%0A";
+
+        seleccionados.forEach(prod => {
+          mensaje += `- ${prod}%0A`;
+        });
+
+        document.getElementById("btn-whatsapp").href = baseURL + mensaje;
+      }
+
+      function actualizarBotones() {
+        document.getElementById("prev-btn").disabled = paginaActual === 0;
+        document.getElementById("next-btn").disabled = (paginaActual + 1) * porPagina >= filtradas.length;
+      }
+
+      document.getElementById("next-btn").addEventListener("click", () => {
+        if ((paginaActual + 1) * porPagina < filtradas.length) {
+          paginaActual++;
+          renderizar();
+        }
+      });
+
+      document.getElementById("prev-btn").addEventListener("click", () => {
+        if (paginaActual > 0) {
+          paginaActual--;
+          renderizar();
+        }
+      });
+      busquedaInput.addEventListener("input", () => {
+        const termino = busquedaInput.value.toLowerCase();
+        filtradas = refacciones.filter(ref => ref.nombre.toLowerCase().includes(termino));
+        paginaActual = 0;
+        renderizar();
+      });
+      renderizar();
+    </script>
+  </body>
+</html>
