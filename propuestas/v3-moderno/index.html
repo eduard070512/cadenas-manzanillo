@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadena's · Transporte · Taller · Refaccionaria — Manzanillo</title>
+  <meta name="description" content="Cadena's Tracto Servicios: transporte de contenedores con rastreo GPS desde Manzanillo, taller de tractocamiones y refaccionaria abierta hasta las 9 PM.">
+  <link rel="icon" href="../img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a href="#inicio" class="brand"><img src="../img/logo.png" alt="Cadena's Transportes de Carga"></a>
+    <nav class="nav" id="nav">
+      <a href="#transporte"><i>01</i>Transporte</a>
+      <a href="#taller"><i>02</i>Taller</a>
+      <a href="#refaccionaria"><i>03</i>Refaccionaria</a>
+      <a href="#nosotros"><i>04</i>Nosotros</a>
+      <a href="#contacto" class="nav__cta">Hablemos ↗</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero__top">
+      <h1>Movemos<br>tu carga, <em>cuidamos</em><br>tu unidad.</h1>
+      <div class="hero__side">
+        <p>Transporte de contenedores desde el puerto de Manzanillo a todo México, taller especializado y refaccionaria abierta hasta las 9 PM. Todo en un mismo lugar.</p>
+        <a href="#contacto" class="btn">Cotiza ahora <span>→</span></a>
+      </div>
+    </div>
+    <div class="hero__img">
+      <img src="../img/carretera.jpg" alt="Tractocamión de Cadena's en carretera" fetchpriority="high">
+      <div class="hero__tag"><span class="dot"></span> Unidades monitoreadas por GPS en tiempo real</div>
+    </div>
+  </div>
+</section>
+
+<!-- Cinta de estados -->
+<div class="marquee" aria-label="Estados con cobertura">
+  <div class="marquee__track" id="marquee"></div>
+</div>
+
+<!-- ============ BENTO ============ -->
+<section class="sec">
+  <div class="wrap bento">
+    <div class="b b--num"><b>2016</b><span>Iniciamos operaciones con un compromiso: entregar en tiempo y forma.</span></div>
+    <div class="b b--img"><img src="../img/nocturno-sm.jpg" alt="Tractocamión con carga de noche" loading="lazy"></div>
+    <div class="b b--orange"><b>9:00 PM</b><span>La refaccionaria sigue abierta cuando otros ya cerraron.</span></div>
+    <div class="b b--num"><b>32</b><span>Estados de la república con cobertura de transporte.</span></div>
+    <div class="b b--dark"><b>3 en 1</b><span>Transporte, taller y refaccionaria para tractocamiones.</span></div>
+    <div class="b b--img"><img src="../img/taller-1-sm.jpg" alt="Taller" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ TRANSPORTE ============ -->
+<section class="sec" id="transporte">
+  <div class="wrap">
+    <div class="title"><i>01</i><h2>Transporte</h2><p>Unidades de modelo reciente en excelentes condiciones mecánicas y operadores capacitados para cumplir nuestro compromiso contigo.</p></div>
+    <div class="rows">
+      <article class="row">
+        <img src="../img/contenedor-sm.jpg" alt="Contenedor en tractocamión" loading="lazy">
+        <div><h3>Transporte local</h3><p>Envíos dentro del estado de Colima, principalmente desde el puerto de Manzanillo hacia diversos puntos del estado.</p></div>
+      </article>
+      <article class="row">
+        <img src="../img/flota-sm.jpg" alt="Flota de tractocamiones" loading="lazy">
+        <div><h3>Transporte foráneo</h3><p>Cobertura nacional bajo solicitud del cliente, con contenedores de todos los tamaños y rastreo GPS.</p></div>
+      </article>
+    </div>
+    <div class="pills3">
+      <div><h4>Seguridad satelital</h4><p>Rastreo en tiempo real y monitoreo constante para máxima seguridad.</p></div>
+      <div><h4>Todo tipo de contenedores</h4><p>Refrigerados, estándar y carga especializada.</p></div>
+      <div><h4>Confianza y control</h4><p>Protocolos de seguridad reforzada y personal capacitado.</p></div>
+    </div>
+    <details class="estados-box">
+      <summary>Ver los 32 estados con cobertura</summary>
+      <ul class="estados" id="estados"></ul>
+    </details>
+  </div>
+</section>
+
+<!-- ============ TALLER ============ -->
+<section class="sec sec--dark" id="taller">
+  <div class="wrap taller">
+    <div>
+      <div class="title title--light"><i>02</i><h2>Taller</h2></div>
+      <p class="big">Especialistas en mantenimiento y reparación de tractocamiones. Elige lo que necesita tu unidad y agenda por WhatsApp.</p>
+      <img class="taller__img" src="../img/mantenimiento-sm.jpg" alt="Unidad en mantenimiento" loading="lazy">
+    </div>
+    <div>
+      <ul class="svc" id="servicios"></ul>
+      <a class="btn btn--block is-off" id="btnTaller" href="#" target="_blank" rel="noopener">Selecciona al menos un servicio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REFACCIONARIA ============ -->
+<section class="sec" id="refaccionaria">
+  <div class="wrap">
+    <div class="title"><i>03</i><h2>Refaccionaria</h2><p>Tu camión no se queda parado por falta de refacción. Arma tu lista y pregunta precio y existencia en un solo mensaje.</p></div>
+    <div class="ref-photos">
+      <img src="../img/refacciones-2-sm.jpg" alt="Atención en refaccionaria" loading="lazy">
+      <img src="../img/almacen-sm.jpg" alt="Almacén de refacciones" loading="lazy">
+      <div class="ref-open"><span class="dot"></span><b>Abierto hasta las 9:00 PM</b><p>Somos tu aliado confiable, hasta el último minuto.</p></div>
+    </div>
+    <div class="tools">
+      <input type="search" id="buscar" placeholder="Buscar refacción…" aria-label="Buscar refacción">
+      <div class="chips" id="cats"></div>
+    </div>
+    <div class="catalogo" id="catalogo"></div>
+    <p class="vacio" id="vacio" hidden>No está en el catálogo, pero pregúntanos: es muy probable que la tengamos.</p>
+  </div>
+</section>
+
+<!-- ============ NOSOTROS ============ -->
+<section class="sec sec--cream" id="nosotros">
+  <div class="wrap">
+    <div class="title"><i>04</i><h2>Nosotros</h2></div>
+    <div class="about">
+      <p class="big">Transportes de Carga Cadena's es una empresa mexicana con <em>más de siete años</em> de experiencia en el transporte de mercancía por todo el territorio nacional.</p>
+      <div class="about__txt">
+        <p>Desde 2016 estamos comprometidos en brindar servicios logísticos de excelencia: puntualidad, confiabilidad, unidades nuevas con rastreo satelital y mejora continua basada en nuestro sistema de gestión de calidad.</p>
+        <p>Nos diferenciamos al hacer del transporte de tus mercancías nuestra prioridad y renovar permanentemente nuestra flota.</p>
+      </div>
+    </div>
+    <figure class="team"><img src="../img/equipo.jpg" alt="Equipo de Cadena's" loading="lazy"><figcaption>El equipo detrás de cada entrega.</figcaption></figure>
+    <div class="mv">
+      <div><span>Misión</span><p>Ofrecer servicios especializados de transporte terrestre con altos estándares de calidad y seguridad, fomentando la mejora continua y el desarrollo de colaboradores, clientes, socios, proveedores y la sociedad.</p></div>
+      <div><span>Visión</span><p>Ser una empresa líder nacional en servicios de transporte terrestre, anticipándonos a las necesidades de nuestros clientes para superar sus expectativas y los estándares del mercado.</p></div>
+    </div>
+    <div class="valores" id="valores"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="sec contacto" id="contacto">
+  <div class="wrap">
+    <h2 class="contacto__t">¿Hablamos?</h2>
+    <div class="contacto__grid">
+      <a class="cbox cbox--wa" href="https://wa.me/5213141382285?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener"><small>WhatsApp</small><b>Escríbenos</b><span>↗</span></a>
+      <a class="cbox" href="tel:+523141382285"><small>Teléfono</small><b>314 138 22 85</b><span>↗</span></a>
+      <a class="cbox" href="mailto:ventasts@gpcadenas.com"><small>Correo</small><b>ventasts@gpcadenas.com</b><span>↗</span></a>
+      <a class="cbox" href="https://maps.google.com/?q=19.0870384,-104.2930196" target="_blank" rel="noopener"><small>Visítanos</small><b>Atún 11-12, Valle de las Garzas, Manzanillo</b><span>↗</span></a>
+    </div>
+    <div class="mapa"><iframe title="Ubicación de Cadena's" loading="lazy" src="https://www.google.com/maps?q=19.0870384,-104.2930196&z=16&output=embed"></iframe></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p class="foot__big">CADENA'S</p>
+    <div class="foot__row">
+      <p>Tracto Servicios · Transportes de Carga · Manzanillo, Colima</p>
+      <p>© <span id="anio"></span> Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra de acciones en móvil -->
+<nav class="mbar" aria-label="Acciones rápidas">
+  <a href="tel:+523141382285">📞<span>Llamar</span></a>
+  <a href="https://wa.me/5213141382285" target="_blank" rel="noopener">💬<span>WhatsApp</span></a>
+  <a href="https://maps.google.com/?q=19.0870384,-104.2930196" target="_blank" rel="noopener">📍<span>Cómo llegar</span></a>
+</nav>
+
+<div class="lista" id="lista" hidden>
+  <span>Tu lista · <b id="listaN">0</b></span>
+  <button type="button" id="listaLimpiar">Vaciar</button>
+  <a id="listaEnviar" href="#" target="_blank" rel="noopener" class="btn">Enviar por WhatsApp →</a>
+</div>
+
+<script src="../comun/datos.js"></script>
+<script src="../comun/interaccion.js"></script>
+<script>
+  // Cinta animada con los estados
+  var m = document.getElementById("marquee");
+  var html = CADENAS.estados.map(function (e) { return "<span>" + e + "</span>"; }).join("");
+  m.innerHTML = html + html;
+</script>
+</body>
+</html>
